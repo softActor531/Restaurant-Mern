@@ -107,7 +107,7 @@ export async function getCurrency() {
     method: "GET",
     headers: {
       "X-BusinessId": "4604",
-      "Authorization": "Bearer f9ab81ef-98a0-41dd-aaa8-f4afe9b21cee",
+      "Authorization": `Bearer ${process.env.REACT_APP_API_TOKEN}`,
       "Content-Type" : "application/json"
     }
   };
@@ -125,7 +125,7 @@ export async function getProducts() {
     method: "GET",
     headers: {
       "X-BusinessId": "4604",
-      "Authorization": "Bearer f9ab81ef-98a0-41dd-aaa8-f4afe9b21cee",
+      "Authorization": `Bearer ${process.env.REACT_APP_API_TOKEN}`,
       "Content-Type" : "application/json"
     }
   };

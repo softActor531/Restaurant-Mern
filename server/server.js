@@ -98,7 +98,7 @@ const renderFullPage = (html, initialState) => {
         ${isProdMode ? `<link rel='stylesheet' href='${assetsManifest['/app.css']}' />` : ''}
         <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'/>
         <script src="https://unpkg.com/lodash@4.16.6"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW46h551bqpYLfFE46lRxtzZ7O0Za4cGQ&libraries=places"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_API_KEY}&libraries=places"></script>
         <style>
           .pac-container {
             z-index: 2000 !important;

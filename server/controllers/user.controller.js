@@ -16,8 +16,7 @@ const bcrypt = require("bcrypt");
 const nodemailer = require('nodemailer');
 
 const client_id = "9yyy-ibH3I1-Om-vrRwAzRDIy8KR";
-const client_secret =   
-  "2d8df4e6726dffa31c7207d06d4a23bf64e672375ea8af9fbf496594aa2f33c6";
+const client_secret = process.env.REACT_APP_CLIENT_SECRET;
 const redirect_uri = "http://165.22.195.119:8000/redirect";
 const refresh_token = process.env.REACT_APP_REFRESH_TOKEN;
 export function createSumUpCustomer(usrData, res) {
@@ -208,7 +207,6 @@ export function makePayment(req, res) {
                     "client_id":client_id,
                     "client_secret":client_secret,
                     "grant_type":"refresh_token",
-                    // "refresh_token":"95e41f393a42c353d76e66e4252967db900d4271c4e6c99eb845a7fbea1012c4"
                     "refresh_token":refresh_token
                 }
                 SumUp.getTokenByRefreshToken(body, (result) => {
@@ -373,7 +371,6 @@ export function checkoutPayment(req, res) {
           client_id: client_id,
           client_secret: client_secret,
           grant_type: "refresh_token",
-          // "refresh_token":"95e41f393a42c353d76e66e4252967db900d4271c4e6c99eb845a7fbea1012c4"
           refresh_token: refresh_token
         };
         SumUp.getTokenByRefreshToken(body, result => {
